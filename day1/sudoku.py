@@ -4,12 +4,12 @@
 
 # Create some sudoku data
 sudokuPuzzle = [
-	[1, 2, 3, 4, 5, 6, 7, 8, 1],
+	[1, 2, 3, 4, 5, 6, 7, 8, 9],
 	[2, 3, 4, 5, 6, 7, 8, 9, 1],
 	[3, 4, 5, 6, 7, 8, 9, 1, 2],
 	[4, 5, 6, 7, 8, 9, 1, 2, 3],
 	[5, 6, 7, 8, 9, 1, 2, 3, 4],
-	[6, 7, 8, 9, 1, 2, 3, 4, 5],
+	[6, 7, 8, 9, 1, 2, 5, 4, 3],
 	[7, 8, 9, 1, 2, 3, 4, 5, 6],
 	[8, 9, 1, 2, 3, 4, 5, 6, 7],
 	[9, 1, 2, 3, 4, 5, 6, 7, 8]
@@ -77,11 +77,20 @@ def checkValidity(sData):
 			# Row
 			if sData[i][j] in row:
 				
-				# Message
-				print("{} occurs in row {} twice!".format(sData[i][j], i + 1))
+				# return Invalid
+				return False
+			
+			# Add to the row list
+			row.append(sData[i][j])
+			
+			# Column
+			if sData[j][i] in column:
 				
 				# return Invalid
 				return False
+			
+			# Add to the row list
+			column.append(sData[i][j])
 				
 			
 drawSudoku(sudokuPuzzle)
