@@ -1,6 +1,6 @@
 # This is a sudoku checker for day 1 of the devember challenge
 # Time started: 5pm
-# Time finished: 
+# Time finished: 5:45pm
 
 # Create some sudoku data
 sudokuPuzzle = [
