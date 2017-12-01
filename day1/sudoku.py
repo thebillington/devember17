@@ -4,7 +4,7 @@
 
 # Create some sudoku data
 sudokuPuzzle = [
-	[1, 2, 3, 4, 5, 6, 7, 8, 9],
+	[1, 2, 3, 4, 5, 6, 7, 8, 1],
 	[2, 3, 4, 5, 6, 7, 8, 9, 1],
 	[3, 4, 5, 6, 7, 8, 9, 1, 2],
 	[4, 5, 6, 7, 8, 9, 1, 2, 3],
@@ -57,7 +57,32 @@ def drawSudoku(sData):
 			
 				# Print the divider
 				print("-------------------------------------------------")
+
+# Function to check whether a sudoku is valid
+def checkValidity(sData):
+	
+	# For each row, column and box
+	for i in range(9):
+		
+		# Create some data to represent whether each row, column and box have each number
+		row = []
+		column = []
+		box = []
+		
+		# Second iterator allows us to check each element individually
+		for j in range(9):
+			
+			# Check whether the given elements are already in their respective lists
+			
+			# Row
+			if sData[i][j] in row:
 				
+				# Message
+				print("{} occurs in row {} twice!".format(sData[i][j], i + 1))
+				
+				# return Invalid
+				return False
 				
 			
 drawSudoku(sudokuPuzzle)
+print(checkValidity(sudokuPuzzle))
