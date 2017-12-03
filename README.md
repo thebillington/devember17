@@ -5,7 +5,7 @@ Repository to hold code for the Devember challenge 2017.
 
 ### Sudoku Checker
 
-Program to check whether a given sudoku puzzle is valid and print a sudkou in terminal.
+Program to check whether a given sudoku puzzle is valid and print a sudoku in terminal.
 
 ## Day 2
 
@@ -22,3 +22,9 @@ The game was built in Javascript using p5.js as a renderer, and a custom physics
 [Submission](https://ldjam.com/events/ludum-dare/40/$59432)
 
 [Development log](https://ldjam.com/users/thebillington/feed)
+
+## Day 3
+
+### Recursive flood fill
+
+A recursive flood fill algorithm that takes some image data and does a flood fill on given pixels.
