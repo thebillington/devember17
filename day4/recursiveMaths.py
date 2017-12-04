@@ -14,5 +14,18 @@ def sum(n):
 
     #Otherwise return 0
     return 0
+
+#f(1) = 1
+#f(n) = n * f(n - 1)
+#Create a function to calculate the factorial of a number
+def factorial(n):
+
+    #If n is greater than 0 return this number multiplied by factorial(n-1)
+    if n > 1:
+        return n * factorial(n - 1)
+
+    #Otherwise return 0
+    return 1
     
 print("\nSum of 1 to 5 = {}".format(sum(5)))
+print("5! = {}".format(factorial(5)))
