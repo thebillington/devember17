@@ -28,3 +28,9 @@ The game was built in Javascript using p5.js as a renderer, and a custom physics
 ### Recursive flood fill
 
 A recursive flood fill algorithm that takes some image data and does a flood fill on given pixels.
+
+## Day 4
+
+### Recursive maths algorithms
+
+Implemented functions to calculate the sum of numbers leading up to n, factorial of n, multiplication of m by n and n squared, using recursive functions.

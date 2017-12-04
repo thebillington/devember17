@@ -1,7 +1,7 @@
 # Come very simple maths algorithms built recursively (I'm on the recursion hype)
 # Sorry for the simplicity, there are only so many hours in a day
 # Time started: 10:45pm
-# Time finished: 
+# Time finished: 11:00pm
 
 #f(0) = 0
 #f(n) = n + f(n - 1)
