@@ -1,6 +1,6 @@
 # A bouncing ball built using turtle to render graphics
 # Time started: 10:30pm
-# Time finished: 
+# Time finished: 10:45pm
 
 # Get turtle
 import turtle as t
@@ -24,7 +24,7 @@ def drawCircle(c, colour):
 	
 	# Move to x,y
 	t.penup()
-	t.goto(c.x, c.y)
+	t.goto(c.x, c.y + c.r)
 	t.pendown()
 	
 	# Set the colour and begin fill
@@ -43,6 +43,20 @@ def drawCircle(c, colour):
 	# End fill
 	t.end_fill()
 	
+# Function to draw a line between two points
+def drawLine(x1, y1, x2, y2, colour):
+	
+	# Go to x1,y1
+	t.penup()
+	t.goto(x1, y1)
+	t.pendown()
+	
+	# Pen colour
+	t.color(colour)
+	
+	# Draw
+	t.goto(x2, y2)
+	
 # Set up turtle
 t.tracer(0, 0)
 t.hideturtle()
@@ -50,11 +64,34 @@ t.hideturtle()
 # Create a circle
 c = Circle(0, 0, 50)
 
+# Physics constants
+gravity = -0.1
+maxFall = -4
+bounce = 6
+fallSpeed = 0
+
+# Line
+lineY = -100
+
 # Game loop
 while True:
 	
 	# Clear
 	t.clear()
+	
+	# Increase fall speed
+	if fallSpeed > maxFall:
+		fallSpeed += gravity
+		
+	# Check for bounce
+	if c.y <= lineY + c.r:
+		fallSpeed = bounce
+		
+	# Move c
+	c.y += fallSpeed
+	
+	# Draw the line
+	drawLine(-200, lineY, 200, lineY, "black")
 	
 	# Draw the circle
 	drawCircle(c, "blue")
