@@ -34,3 +34,9 @@ A recursive flood fill algorithm that takes some image data and does a flood fil
 ### Recursive maths algorithms
 
 Implemented functions to calculate the sum of numbers leading up to n, factorial of n, multiplication of m by n and n squared, using recursive functions.
+
+## Day 5
+
+### Bouncing ball
+
+A simple bouncing ball drawn using turtle. Very basic implementation of gravity and range checks for position of the ball.
