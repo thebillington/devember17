@@ -5,37 +5,61 @@
 # Get turtle
 import turtle as t
 
+# Create a rect class
+class Rect():
+	
+	# Constructor
+	def __init__(self, x, y, width, height, c):
+		
+		# Store attributes
+		self.x = x
+		self.y = y
+		self.width = width
+		self.height = height
+		self.colour = c
+
 # Create a function to draw a rect based on a coordinate and width/height with colour
-def drawRect(x, y, width, height, c):
+def drawRect(r):
+	
+	# Get the points
+	points = getCoords(r)
 	
 	# Go to the first point
 	t.penup()
-	t.goto(x - width / 2, y + height / 2)
+	t.goto(points[0])
 	t.pendown()
 	
 	# Start fill
-	t.color(c)
+	t.color(r.colour)
 	t.pencolor("black")
 	t.begin_fill()
 	
 	# Go to the next three coordinates in order
-	t.goto(x + width / 2, y + height / 2)
-	t.goto(x + width / 2, y - height / 2)
-	t.goto(x - width / 2, y - height / 2)
+	for i in range(1, 4):
+		t.goto(points[i])
 	
 	# End fill
 	t.end_fill()
+	
+# Function to get the points of a rectangle from x, y, width and height
+def getCoords(r):
+	
+	# Return a list of points
+	return [(r.x - r.width / 2, r.y + r.height / 2), (r.x + r.width / 2, r.y + r.height / 2), (r.x + r.width / 2, r.y - r.height / 2), (r.x - r.width / 2, r.y - r.height / 2)]
 	
 # Set up turtle
 t.tracer(0, 0)
 t.hideturtle()
 
+# Create a rectangle
+r = Rect(-50, 50, 50, 50, "blue")
+
 # Game loop
 while True:
 	 
 	# Draw a rect
-	drawRect(-50, 50, 50, 50, "blue")
+	drawRect(r)
 
 	# Update
 	t.update()
-		
+
