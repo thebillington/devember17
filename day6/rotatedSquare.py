@@ -1,6 +1,6 @@
 # Create a function to rotate a rect and draw it on screen
 # Time started: 10:10pm
-# Time finished: 
+# Time finished: 10:30pm
 
 # Get libraries
 import turtle as t

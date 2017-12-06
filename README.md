@@ -40,3 +40,9 @@ Implemented functions to calculate the sum of numbers leading up to n, factorial
 ### Bouncing ball
 
 A simple bouncing ball drawn using turtle. Very basic implementation of gravity and range checks for position of the ball.
+
+## Day 6
+
+### Rotating rectangle
+
+Simple program to rotate the points of a square based on some angle a in degrees.
