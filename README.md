@@ -46,3 +46,9 @@ A simple bouncing ball drawn using turtle. Very basic implementation of gravity 
 ### Rotating rectangle
 
 Simple program to rotate the points of a square based on some angle a in degrees.
+
+## Day 7
+
+### Snow globe
+
+Create a simple snow flurry in turtle. The code isn't great but it looks nice when it's running!

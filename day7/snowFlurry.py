@@ -1,6 +1,7 @@
 # Create a christmas snow flurry using turtle
 # Time started: 11:30pm
-# Time finished:
+# Time finished: 00:15am
+# PLEASE NOTE THIS CODE WAS DONE LATE AT NIGHT AND IS VERY VERY BAD
 
 # Get library
 import turtle as t
