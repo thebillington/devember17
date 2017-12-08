@@ -52,3 +52,15 @@ Simple program to rotate the points of a square based on some angle a in degrees
 ### Snow globe
 
 Create a simple snow flurry in turtle. The code isn't great but it looks nice when it's running!
+
+## Day 8
+
+### Outnumbered
+
+Some minor updates to the outnumbered game.
+
+[Play the game](http://outnumberedgame.co.uk/beta)
+
+[Soure code](https://github.com/thebillington/outnumberedGame)
+
+[Submission](https://ldjam.com/events/ludum-dare/40/$59432)
