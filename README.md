@@ -59,7 +59,13 @@ Create a simple snow flurry in turtle. The code isn't great but it looks nice wh
 
 Some minor updates to the outnumbered game.
 
-[Play the game](http://outnumberedgame.co.uk/beta)
+## Day 8
+
+### Outnumbered
+
+Major overhaul of the outnumbered game. Added a difficulty progression, levels, second enemy style and teleport ability.
+
+[Play the beta version](http://outnumberedgame.co.uk/beta)
 
 [Soure code](https://github.com/thebillington/outnumberedGame)
 
