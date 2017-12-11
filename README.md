@@ -59,7 +59,7 @@ Create a simple snow flurry in turtle. The code isn't great but it looks nice wh
 
 Some minor updates to the outnumbered game.
 
-## Day 8
+## Day 9
 
 ### Outnumbered
 
@@ -71,11 +71,23 @@ Major overhaul of the outnumbered game. Added a difficulty progression, levels, 
 
 [Submission](https://ldjam.com/events/ludum-dare/40/$59432)
 
-## Day 9
+## Day 10
 
 ### Outnumbered
 
 Added sound to the outnumbered game as well as minor updates to the menus, instructions and play style.
+
+[Play the beta version](http://outnumberedgame.co.uk/beta)
+
+[Soure code](https://github.com/thebillington/outnumberedGame)
+
+[Submission](https://ldjam.com/events/ludum-dare/40/$59432)
+
+## Day 11
+
+### Outnumbered
+
+Introduced two new levels and changed the music. Some minor changes to level 2. Started working on boss battle though this is yet to see light of day.
 
 [Play the beta version](http://outnumberedgame.co.uk/beta)
 
