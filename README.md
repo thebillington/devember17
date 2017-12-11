@@ -70,3 +70,15 @@ Major overhaul of the outnumbered game. Added a difficulty progression, levels, 
 [Soure code](https://github.com/thebillington/outnumberedGame)
 
 [Submission](https://ldjam.com/events/ludum-dare/40/$59432)
+
+## Day 9
+
+### Outnumbered
+
+Added sound to the outnumbered game as well as minor updates to the menus, instructions and play style.
+
+[Play the beta version](http://outnumberedgame.co.uk/beta)
+
+[Soure code](https://github.com/thebillington/outnumberedGame)
+
+[Submission](https://ldjam.com/events/ludum-dare/40/$59432)
