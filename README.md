@@ -106,3 +106,18 @@ Yet another day on Outnumbered. Spent some time working on the existing gameplay
 [Soure code](https://github.com/thebillington/outnumberedGame)
 
 [Submission](https://ldjam.com/events/ludum-dare/40/$59432)
+
+## Day 13
+
+### Best fit resistance calculator
+
+Finally something different. Spent today with an old friend and he gave me an interesting challenge that he has been working on.
+
+This would be best suited to an arduino but I said I would design a prototype of the algorithm using python.
+
+Essentially, rather than using a variable resistor, let's imagine using a number of resistors in paralell, hooked up to the output pins of an Arduino. 10 resistors to be precise.
+
+Given an input target resistance rT, I'm going to design an algorithm that calculates rC (combinational resistance) where:
+
+* rC is created by switching on a number of the resistors in paralell
+* The given value of rC is the closest possible resistance to rT, given the input resistors§
