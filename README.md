@@ -94,3 +94,15 @@ Introduced two new levels and changed the music. Some minor changes to level 2. 
 [Soure code](https://github.com/thebillington/outnumberedGame)
 
 [Submission](https://ldjam.com/events/ludum-dare/40/$59432)
+
+## Day 12
+
+### Outnumbered
+
+Yet another day on Outnumbered. Spent some time working on the existing gameplay elements and drastically improved the homing rockets.
+
+[Play the beta version](http://outnumberedgame.co.uk/beta)
+
+[Soure code](https://github.com/thebillington/outnumberedGame)
+
+[Submission](https://ldjam.com/events/ludum-dare/40/$59432)
