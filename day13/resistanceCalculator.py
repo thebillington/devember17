@@ -4,71 +4,86 @@
 
 # Create a list of resistors (ohms)
 resistors = [0.1, 0.2, 0.3, 0.5, 1.0, 2.0, 3.0, 5.0, 10.0, 20.0]
+		
+# Store the current closest resistance
+global rC
+rC = None
+
+# Store the current best combination
+global bestCombo
+bestCombo = []
 
 # Function to take in a given resistance and calculate the combination of resistors that is closes
-def closestCombination(rT):
+def closestCombination(rT, data):
+	
+	# For each length of list
+	for r in range(len(data)):
+	
+		# Gen list to hold the current permutation
+		perm = []
 		
-	# Store the current closest resistance
-	rC = None
+		# Initialize the list
+		for i in range(r):
+			perm.append(0)
+			
+		# Crunch the numbers
+		allPermutations(perm, rT, data, 0, len(data) - 1, 0, r)
 
-	# Store the current best combination
-	bestCombo = []
+# A function to check whether the current resistance is closer than the target
+def checkResistance(current, target, combo, r):
 	
-	# Store the current step
-	cStep = 1
+	# Globals
+	global rC
+	global bestCombo
 	
-	# Iterate the same number of times as the number of resistors
-	for count in range(len(resistors)):
+	# Check whether rC exists
+	if rC == None:
+		rC = current
+		bestCombo = combo
+		return
+	
+	# If the diff(current, target) < diff(rC, target)
+	if abs(current - target) < abs(rC - target):
 		
-		# Iterate over each of the resistances
-		for i in range(0, len(resistors)):
-			
-			print(i)
-			
-			# Set the current resistance
-			cResistance = 0
-			
-			# Store the current combination
-			cCombination = []
-				
-			# If rC is None
-			if rC == None:
-					
-				# Initialize rC
-				rC = resistors[i]
-				
-			# Check that the result is valid
-			if i + cStep < len(resistors):
-					
-				# Iterate cStep times
-				for j in range(cStep):
-					
-					# Add i + j to the current resistance and append to the combo
-					cResistance += resistors[i + j]
-					cCombination.append(i + j + 1)
-					
-				# Check whether the current resistance is closes to the target resistance
-				if abs(cResistance - rT) < abs(rC - rT):
-					
-					# Update the best resistance
-					rC = cResistance
-					
-					# Update the best combination
-					bestCombo = cCombination
-				
-		# Add one to the step amount
-		cStep += 1
+		# Update
+		rC = current
+		bestCombo = list(combo)
+
+# Function to calculate the resistance for all permutations of a certain length
+def allPermutations(arr, rT, data, start, end, index, r):
 	
-	# Print the closest resistance
-	print("Closest resistance to {}: {}".format(rT, rC))
-	
-	# Print the combination
-	print("Achieved through switching on the following resistor(s): {}".format(bestCombo))
-	
+	# If the index is r
+	if index == r:
+		
+		# Take the sum of the data as the current resistance
+		currentR = sum(data)
+		
+		# Check if this is the best
+		checkResistance(currentR, rT, data, r)
+		
+		# Return
+		return
+		
+	# Otherwise check each resistance for the current r
+	for i in range(start, end):
+		
+		# Check the current combination
+		arr[index] = data[i]
+		checkResistance(sum(arr), rT, arr, r)
+		
+		# Recursively check the next combination
+		allPermutations(arr, rT, data, i + 1, end, index + 1, r)
 
 # Print the max resistance
 print("\nMax achievable resistance: {}".format(sum(resistors)))
 print("By combining: {}\n".format(resistors))
 
+# Get users target resistance
+target = float(input("Enter the target resistance: "))
+
 # Try and find the closest combination to 2.43
-closestCombination(2.43)
+closestCombination(target, resistors)
+
+# Print the best combo
+print("Closest resistance: {}".format(rC))
+print("Achieved by combining: {}".format(bestCombo))
