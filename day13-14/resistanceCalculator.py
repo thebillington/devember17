@@ -1,6 +1,6 @@
 # Create a resistance combination calculator for a number of resistors in paralell
-# Time started: 10:10pm
-# Time finished: 
+# Time started: 10:10pm (13/12/17)
+# Time finished: 8:50pm (14/12/17)
 
 # Create a list of resistors (ohms)
 resistors = [0.1, 0.2, 0.3, 0.5, 1.0, 2.0, 3.0, 5.0, 10.0, 20.0]

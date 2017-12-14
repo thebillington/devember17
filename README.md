@@ -107,7 +107,7 @@ Yet another day on Outnumbered. Spent some time working on the existing gameplay
 
 [Submission](https://ldjam.com/events/ludum-dare/40/$59432)
 
-## Day 13
+## Day 13/14
 
 ### Best fit resistance calculator
 
@@ -120,4 +120,8 @@ Essentially, rather than using a variable resistor, let's imagine using a number
 Given an input target resistance rT, I'm going to design an algorithm that calculates rC (combinational resistance) where:
 
 * rC is created by switching on a number of the resistors in paralell
-* The given value of rC is the closest possible resistance to rT, given the input resistors§
+* The given value of rC is the closest possible resistance to rT, given the input resistors
+
+This took me quite a while to get working as I was attempting an iterative solution. When I switched to using a recursive solution it was much easier.
+
+Credit to [this](http://www.geeksforgeeks.org/print-all-possible-combinations-of-r-elements-in-a-given-array-of-size-n/) geeksforgeeks post for helping me design the recursive structure.
