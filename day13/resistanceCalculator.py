@@ -15,13 +15,15 @@ def closestCombination(rT):
 	bestCombo = []
 	
 	# Store the current step
-	cStep = 0
+	cStep = 1
 	
 	# Iterate the same number of times as the number of resistors
 	for count in range(len(resistors)):
 		
 		# Iterate over each of the resistances
-		for i in range(len(resistors)):
+		for i in range(0, len(resistors)):
+			
+			print(i)
 			
 			# Set the current resistance
 			cResistance = 0
@@ -37,24 +39,13 @@ def closestCombination(rT):
 				
 			# Check that the result is valid
 			if i + cStep < len(resistors):
-				
-				# Set the current resistance to this resistor
-				cResistance = resistors[i]
-					
-				# Add i to the current combination
-				cCombination.append(i + 1)
 					
 				# Iterate cStep times
 				for j in range(cStep):
 					
-					print(cCombination)
-					
 					# Add i + j to the current resistance and append to the combo
-					cResistance += resistors[i + j + 1]
+					cResistance += resistors[i + j]
 					cCombination.append(i + j + 1)
-				
-				# Add cStep to i
-				i += cStep
 					
 				# Check whether the current resistance is closes to the target resistance
 				if abs(cResistance - rT) < abs(rC - rT):
