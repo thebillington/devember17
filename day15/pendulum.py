@@ -1,6 +1,6 @@
 # Create a pendulum using turtle and some none physics
 # Time started: 10:45pm
-# Time finished: 
+# Time finished: 11:10pm
 
 # Import turtle library
 import turtle as t
@@ -47,6 +47,21 @@ def rotateAroundPoint(point, origin, angle):
 	# Return the rotated point
 	return coord(c * (point.x - origin.x) - s * (point.y - origin.y), c * (point.y - origin.y) + s * (point.x - origin.x))
 	
+# Function to draw the pendulum
+def drawPendulum(coord, radius):
+	
+	# Go to the coord
+	t.penup()
+	t.goto(coord.x, coord.y - radius)
+	t.pendown()
+	t.color("#D4AF37")
+	t.pencolor("black")
+	
+	# Draw the circle
+	t.begin_fill()
+	t.circle(radius)
+	t.end_fill()
+	
 # Setup turtle
 t.hideturtle()
 t.tracer(0, 0)
@@ -60,6 +75,9 @@ base = coord(0, -50)
 # Store the amount of rotation
 rotation = 0
 
+# Store the speed of the rotation
+speed = 1
+
 # Game loop
 while True:
 	
@@ -69,8 +87,18 @@ while True:
 	# Draw the line
 	drawLine(root, rotateAroundPoint(base, root, rotation), 10)
 	
+	# Draw athe circles
+	drawPendulum(root, 20)
+	drawPendulum(rotateAroundPoint(base, root, rotation), 50)
+	
 	# Add one to rotation
-	rotation += 1
+	rotation += speed
+	
+	# Check whether the direction should switch
+	if rotation > 30 or rotation < -30:
+		
+		# Switch the direction
+		speed = -speed
 	
 	# Update
 	t.update()

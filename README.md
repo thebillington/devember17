@@ -125,3 +125,9 @@ Given an input target resistance rT, I'm going to design an algorithm that calcu
 This took me quite a while to get working as I was attempting an iterative solution. When I switched to using a recursive solution it was much easier.
 
 Credit to [this](http://www.geeksforgeeks.org/print-all-possible-combinations-of-r-elements-in-a-given-array-of-size-n/) geeksforgeeks post for helping me design the recursive structure.
+
+## Day 15
+
+### As the pendulum swings
+
+Create a basic swinging pendulum using Turtle in python. Not the best implementation ever but kind of works with given values.
