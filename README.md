@@ -131,3 +131,9 @@ Credit to [this](http://www.geeksforgeeks.org/print-all-possible-combinations-of
 ### As the pendulum swings
 
 Create a basic swinging pendulum using Turtle in python. Not the best implementation ever but kind of works with given values.
+
+## Day 16
+
+### Growing shape
+
+A simple program that makes a shape grow by increasing the number of sides over time.
