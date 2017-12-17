@@ -137,3 +137,9 @@ Create a basic swinging pendulum using Turtle in python. Not the best implementa
 ### Growing shape
 
 A simple program that makes a shape grow by increasing the number of sides over time.
+
+## Day 17
+
+### Collage creator
+
+Generate a completely random collage from coloured circles.

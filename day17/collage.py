@@ -12,6 +12,21 @@ from random import randint
 rMax = 50
 rMin = 5
 
+# Create a function to get a new random hex value
+def getColour():
+	
+	# Create an empty colour
+	colour = "#"
+	
+	# Add rgb values
+	for i in range(6):
+
+		# Store all the nums in hex
+		colour += str(hex(randint(1, 15))).strip("0x")
+		
+	# Return the colour
+	return colour
+
 # Function to generate a new circle
 def newCircle():
 	
@@ -19,6 +34,9 @@ def newCircle():
 	x = randint(-200, 200)
 	y = randint(-200, 200)
 	r = randint(rMin, rMax)
+	
+	# Set the random colour
+	t.color(getColour())
 	
 	# Draw the circle
 	t.penup()
