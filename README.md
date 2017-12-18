@@ -143,3 +143,9 @@ A simple program that makes a shape grow by increasing the number of sides over 
 ### Collage creator
 
 Generate a completely random collage from coloured circles.
+
+## Day 18
+
+### Snake game
+
+Slightly off topic today with a snake game built with p5.js. Dead simple but effective.
