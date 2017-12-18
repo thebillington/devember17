@@ -130,3 +130,30 @@ function drawGrid() {
     }
     
 }
+
+// Check for key presses
+function keyPressed() {
+    
+    // Check the value
+    if (keyCode == LEFT_ARROW) {
+        
+        // Set the speed
+        speed = {"dx": -1, "dy": 0}
+    }
+    if (keyCode == RIGHT_ARROW) {
+        
+        // Set the speed
+        speed = {"dx": 1, "dy": 0}
+    }
+    if (keyCode == UP_ARROW) {
+        
+        // Set the speed
+        speed = {"dx": 0, "dy": -1}
+    }
+    if (keyCode == DOWN_ARROW) {
+        
+        // Set the speed
+        speed = {"dx": 0, "dy": 1}
+    }
+    
+}
