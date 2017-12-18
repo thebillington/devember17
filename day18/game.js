@@ -38,7 +38,7 @@ function setup() {
     snake = [Coord(2, 0), Coord(1, 0), Coord(0, 0)];
     
     // Set the snakes speed
-    speed = {"dx": 1, "dy": 0};
+    speed = {"dx": 0, "dy": 1};
     
 }
 
@@ -51,6 +51,41 @@ function draw() {
     // Draw the snake
     drawSnake();
     
+    // Update the snake
+    updateSnake();
+    
+}
+
+// Function to update the snake
+function updateSnake() {
+    
+    // Move each of the pixels
+    for (var i = snake.length - 1; i > 0; i--) {
+        
+        // Move the pixel to the previous location
+        snake[i] = {"x":snake[i - 1].x, "y":snake[i - 1].y};
+        
+    }
+    
+    // Move the last location by speed
+    snake[0] = {"x": snake[0].x + speed.dx, "y": snake[0].y + speed.dy}
+    
+    // Check if the head has wrapped
+    if (snake[0].x < 0) {
+        snake[0].x = gridSize - 1;
+    }
+        
+    if (snake[0].x >= gridSize) {
+        snake[0].x = 0;
+    }
+    if (snake[0].y < 0) {
+        snake[0].y = gridSize - 1;
+    }
+        
+    if (snake[0].y >= gridSize) {
+        snake[0].y = 0;
+    }
+    
 }
 
 // Function to drawe a snake
@@ -58,8 +93,6 @@ function drawSnake() {
     
     // Draw each of the pixels
     for (var i = 0; i < snake.length; i++) {
-        
-        console.log(snake[i]);
         
         // Get the x and y
         var x = snake[i].x * pixelSize;
