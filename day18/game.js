@@ -17,6 +17,9 @@ var snake;
 // Snake speed
 var speed;
 
+// Store the powerup
+var powerup;
+
 // Function to return a coordinate
 function Coord(x, y) {
     
@@ -40,6 +43,9 @@ function setup() {
     // Set the snakes speed
     speed = {"dx": 0, "dy": 1};
     
+    // Generate a powerup
+    powerup = getRandCoord();
+    
 }
 
 // Render function
@@ -47,6 +53,9 @@ function draw() {
     
     // Draw the grid
     drawGrid();
+    
+    // Draw the powerup
+    drawGridSquare(powerup.x * pixelSize, powerup.y * pixelSize, color(255, 0, 0));
     
     // Draw the snake
     drawSnake();
@@ -88,6 +97,18 @@ function updateSnake() {
     
 }
 
+// Function to draw a gridSquare
+function drawGridSquare(x, y, colour) {
+    
+    // Set the colour
+    color(0);
+    fill(colour);
+    
+    // Draw
+    quad(x, y, x + pixelSize, y, x + pixelSize, y + pixelSize, x, y + pixelSize);
+    
+}
+
 // Function to drawe a snake
 function drawSnake() {
     
@@ -99,9 +120,7 @@ function drawSnake() {
         var y = snake[i].y * pixelSize;
         
         // Fill the pixel
-        color(0);
-        fill(0);
-        quad(x, y, x + pixelSize, y, x + pixelSize, y + pixelSize, x, y + pixelSize);
+        drawGridSquare(x, y, 0);
         
     }
     
@@ -114,16 +133,12 @@ function drawGrid() {
     for (var i = 0; i < gridSize; i++) {
         for(var j = 0; j < gridSize; j++) {
             
-            // Fill color
-            color(0);
-            fill(255);
-            
             // Get x and y
             var x = i * pixelSize;
             var y = j * pixelSize;
             
             // Draw a quad at the correct location
-            quad(x, y, x + pixelSize, y, x + pixelSize, y + pixelSize, x, y + pixelSize);
+            drawGridSquare(x, y, 255);
             
         }
         
@@ -155,5 +170,13 @@ function keyPressed() {
         // Set the speed
         speed = {"dx": 0, "dy": 1}
     }
+    
+}
+
+// Function to generate a random coordinate
+function getRandCoord() {
+    
+    // Return a random coordinate in the grid
+    return {x: Math.floor(Math.random() * (gridSize) + 1), y: Math.floor(Math.random() * (gridSize) + 1)}
     
 }
