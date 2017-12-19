@@ -66,7 +66,8 @@ function draw() {
     // Check if the powrup was eaten
     eaten();
     
-    console.log(powerup);
+    // Check for death
+    death();
     
 }
 
@@ -116,6 +117,24 @@ function eaten() {
         
         // Generate a new powerup
         powerup = getRandCoord();
+        
+    }
+    
+}
+
+// Function to check whether the snakle has died
+function death() {
+    
+    // Check each of the snakes body parts
+    for (var i = 1; i < snake.length; i++) {
+        
+        // If the snakes head has collided
+        if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
+            
+            // DIE
+            setup();
+            
+        }
         
     }
     
