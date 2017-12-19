@@ -66,6 +66,8 @@ function draw() {
     // Check if the powrup was eaten
     eaten();
     
+    console.log(powerup);
+    
 }
 
 // Function to update the snake
@@ -199,6 +201,6 @@ function keyPressed() {
 function getRandCoord() {
     
     // Return a random coordinate in the grid
-    return {x: Math.floor(Math.random() * (gridSize) + 1), y: Math.floor(Math.random() * (gridSize) + 1)}
+    return {x: Math.floor(Math.random() * (gridSize)), y: Math.floor(Math.random() * (gridSize))}
     
 }
