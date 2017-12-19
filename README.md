@@ -148,4 +148,14 @@ Generate a completely random collage from coloured circles.
 
 ### Snake game
 
-Slightly off topic today with a snake game built with p5.js. Dead simple but effective.
+Slightly off topic today with a snake game built with p5.js. The basic controls are working and the grid is drawing, tomorrow I will finish the gameplay elements.
+
+[Play the game](http://billyrebecchi.co.uk/snake)
+
+## Day 19
+
+### Snake game
+
+Add game logic and make some minor improvements to game style.
+
+[Play the game](http://billyrebecchi.co.uk/snake)
