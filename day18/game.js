@@ -63,6 +63,9 @@ function draw() {
     // Update the snake
     updateSnake();
     
+    // Check if the powrup was eaten
+    eaten();
+    
 }
 
 // Function to update the snake
@@ -93,6 +96,25 @@ function updateSnake() {
         
     if (snake[0].y >= gridSize) {
         snake[0].y = 0;
+    }
+    
+}
+
+// Function to check if the player has eaten the powerup
+function eaten() {
+    
+    // If the tail has collided with the powerup
+    if (snake[snake.length - 1].x == powerup.x && snake[snake.length - 1].y == powerup.y) {
+        
+        // Update the snake
+        updateSnake();
+        
+        // Add to the tail of the snake
+        snake.push(powerup);
+        
+        // Generate a new powerup
+        powerup = getRandCoord();
+        
     }
     
 }
