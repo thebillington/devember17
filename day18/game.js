@@ -20,6 +20,9 @@ var speed;
 // Store the powerup
 var powerup;
 
+// Store current direction
+var direction;
+
 // Function to return a coordinate
 function Coord(x, y) {
     
@@ -41,10 +44,13 @@ function setup() {
     snake = [Coord(2, 0), Coord(1, 0), Coord(0, 0)];
     
     // Set the snakes speed
-    speed = {"dx": 0, "dy": 1};
+    speed = {"dx": 1, "dy": 0};
     
     // Generate a powerup
     powerup = getRandCoord();
+    
+    // Set the direction
+    direction = "right";
     
 }
 
@@ -193,25 +199,29 @@ function drawGrid() {
 function keyPressed() {
     
     // Check the value
-    if (keyCode == LEFT_ARROW) {
+    if (keyCode == LEFT_ARROW && direction !== "right") {
         
         // Set the speed
         speed = {"dx": -1, "dy": 0}
+        direction = "left";
     }
-    if (keyCode == RIGHT_ARROW) {
+    if (keyCode == RIGHT_ARROW && direction !== "left") {
         
         // Set the speed
         speed = {"dx": 1, "dy": 0}
+        direction = "right";
     }
-    if (keyCode == UP_ARROW) {
+    if (keyCode == UP_ARROW && direction !== "down") {
         
         // Set the speed
         speed = {"dx": 0, "dy": -1}
+        direction = "up";
     }
-    if (keyCode == DOWN_ARROW) {
+    if (keyCode == DOWN_ARROW && direction !== "up") {
         
         // Set the speed
         speed = {"dx": 0, "dy": 1}
+        direction = "down";
     }
     
 }
