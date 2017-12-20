@@ -31,6 +31,25 @@ function Coord(x, y) {
     
 }
 
+// Function to return a Snake
+function Snake(x, y, speed, length, active) {
+    
+    //Create a new snake object
+    var body = [];
+    
+    // Populate the body
+    for (var i = 0; i < length; i++) {
+        
+        // Add to the body
+        body.push(Coord(x - i * speed.dx, y - i * speed.dy));
+        
+    }
+    
+    // Return the snake
+    return {"body": body.slice(), "speed": speed, "active": active}
+    
+}
+
 // Setup function
 function setup() {
     
@@ -41,10 +60,9 @@ function setup() {
     pixelSize = width / gridSize;
     
     // Create the snake
-    snake = [Coord(2, 0), Coord(1, 0), Coord(0, 0)];
+    snake = Snake(2, 0, {"dx": 1, "dy": 0}, 3, true);
     
-    // Set the snakes speed
-    speed = {"dx": 1, "dy": 0};
+    drawSnake();
     
     // Generate a powerup
     powerup = getRandCoord();
@@ -81,30 +99,30 @@ function draw() {
 function updateSnake() {
     
     // Move each of the pixels
-    for (var i = snake.length - 1; i > 0; i--) {
+    for (var i = snake.body.length - 1; i > 0; i--) {
         
         // Move the pixel to the previous location
-        snake[i] = {"x":snake[i - 1].x, "y":snake[i - 1].y};
+        snake.body[i] = {"x":snake.body[i - 1].x, "y":snake.body[i - 1].y};
         
     }
     
     // Move the last location by speed
-    snake[0] = {"x": snake[0].x + speed.dx, "y": snake[0].y + speed.dy}
+    snake.body[0] = {"x": snake.body[0].x + snake.speed.dx, "y": snake.body[0].y + snake.speed.dy}
     
     // Check if the head has wrapped
-    if (snake[0].x < 0) {
-        snake[0].x = gridSize - 1;
+    if (snake.body[0].x < 0) {
+        snake.body[0].x = gridSize - 1;
     }
         
-    if (snake[0].x >= gridSize) {
-        snake[0].x = 0;
+    if (snake.body[0].x >= gridSize) {
+        snake.body[0].x = 0;
     }
-    if (snake[0].y < 0) {
-        snake[0].y = gridSize - 1;
+    if (snake.body[0].y < 0) {
+        snake.body[0].y = gridSize - 1;
     }
         
-    if (snake[0].y >= gridSize) {
-        snake[0].y = 0;
+    if (snake.body[0].y >= gridSize) {
+        snake.body[0].y = 0;
     }
     
 }
@@ -113,13 +131,13 @@ function updateSnake() {
 function eaten() {
     
     // If the tail has collided with the powerup
-    if (snake[snake.length - 1].x == powerup.x && snake[snake.length - 1].y == powerup.y) {
+    if (snake.body[snake.body.length - 1].x == powerup.x && snake.body[snake.body.length - 1].y == powerup.y) {
         
         // Update the snake
         updateSnake();
         
         // Add to the tail of the snake
-        snake.push(powerup);
+        snake.body.push(powerup);
         
         // Generate a new powerup
         powerup = getRandCoord();
@@ -132,10 +150,10 @@ function eaten() {
 function death() {
     
     // Check each of the snakes body parts
-    for (var i = 1; i < snake.length; i++) {
+    for (var i = 1; i < snake.body.length; i++) {
         
         // If the snakes head has collided
-        if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
+        if (snake.body[0].x == snake.body[i].x && snake.body[0].y == snake.body[i].y) {
             
             // DIE
             setup();
@@ -162,11 +180,11 @@ function drawGridSquare(x, y, colour) {
 function drawSnake() {
     
     // Draw each of the pixels
-    for (var i = 0; i < snake.length; i++) {
+    for (var i = 0; i < snake.body.length; i++) {
         
         // Get the x and y
-        var x = snake[i].x * pixelSize;
-        var y = snake[i].y * pixelSize;
+        var x = snake.body[i].x * pixelSize;
+        var y = snake.body[i].y * pixelSize;
         
         // Fill the pixel
         drawGridSquare(x, y, 0);
@@ -202,25 +220,25 @@ function keyPressed() {
     if (keyCode == LEFT_ARROW && direction !== "right") {
         
         // Set the speed
-        speed = {"dx": -1, "dy": 0}
+        snake.speed = {"dx": -1, "dy": 0}
         direction = "left";
     }
     if (keyCode == RIGHT_ARROW && direction !== "left") {
         
         // Set the speed
-        speed = {"dx": 1, "dy": 0}
+        snake.speed = {"dx": 1, "dy": 0}
         direction = "right";
     }
     if (keyCode == UP_ARROW && direction !== "down") {
         
         // Set the speed
-        speed = {"dx": 0, "dy": -1}
+        snake.speed = {"dx": 0, "dy": -1}
         direction = "up";
     }
     if (keyCode == DOWN_ARROW && direction !== "up") {
         
         // Set the speed
-        speed = {"dx": 0, "dy": 1}
+        snake.speed = {"dx": 0, "dy": 1}
         direction = "down";
     }
     
