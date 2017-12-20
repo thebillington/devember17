@@ -119,7 +119,7 @@ Essentially, rather than using a variable resistor, let's imagine using a number
 
 Given an input target resistance rT, I'm going to design an algorithm that calculates rC (combinational resistance) where:
 
-* rC is created by switching on a number of the resistors in paralell
+* rC is created by switching on a number of the resistors in parallel
 * The given value of rC is the closest possible resistance to rT, given the input resistors
 
 This took me quite a while to get working as I was attempting an iterative solution. When I switched to using a recursive solution it was much easier.
@@ -157,5 +157,13 @@ Slightly off topic today with a snake game built with p5.js. The basic controls 
 ### Snake game
 
 Add game logic and make some minor improvements to game style.
+
+[Play the game](http://billyrebecchi.co.uk/snake)
+
+## Day 20
+
+### Snake game
+
+Made snake Object Oriented - planning forward for introduction of multiple snakes. Battle snakes?
 
 [Play the game](http://billyrebecchi.co.uk/snake)
